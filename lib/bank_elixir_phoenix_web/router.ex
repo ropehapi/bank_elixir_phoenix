@@ -7,6 +7,8 @@ defmodule BankElixirPhoenixWeb.Router do
 
   scope "/api", BankElixirPhoenixWeb do
     pipe_through :api
+
+    get "/", WelcomeController, :index
   end
 
   # Enable LiveDashboard in development
