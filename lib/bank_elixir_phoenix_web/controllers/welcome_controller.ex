@@ -3,7 +3,8 @@ defmodule BankElixirPhoenixWeb.WelcomeController do
 
   def index(conn, _params) do
     conn
-    |> json(%{message: "Bem vindo ao banking api", status: :ok})
+    |> put_status(:ok)
+    |> json(%{message: "Bem vindo ao banking api"})
   end
 
 end
