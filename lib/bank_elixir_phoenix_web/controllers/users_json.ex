@@ -9,6 +9,13 @@ defmodule BankElixirPhoenixWeb.UsersJSON do
 
   def get(%{user: user}), do: %{data: data(user)}
 
+  def update(%{user: user}) do
+    %{
+      message: "User atualizado com sucesso!",
+      data: data(user)
+    }
+  end
+
   defp data(%User{} = user) do
     %{
       id: user.id,
