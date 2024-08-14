@@ -6,5 +6,4 @@ defmodule BankElixirPhoenixWeb.WelcomeController do
     |> put_status(:ok)
     |> json(%{message: "Bem vindo ao banking api"})
   end
-
 end

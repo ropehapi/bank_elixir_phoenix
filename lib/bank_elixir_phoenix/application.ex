@@ -10,7 +10,8 @@ defmodule BankElixirPhoenix.Application do
     children = [
       BankElixirPhoenixWeb.Telemetry,
       BankElixirPhoenix.Repo,
-      {DNSCluster, query: Application.get_env(:bank_elixir_phoenix, :dns_cluster_query) || :ignore},
+      {DNSCluster,
+       query: Application.get_env(:bank_elixir_phoenix, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: BankElixirPhoenix.PubSub},
       # Start a worker by calling: BankElixirPhoenix.Worker.start_link(arg)
       # {BankElixirPhoenix.Worker, arg},

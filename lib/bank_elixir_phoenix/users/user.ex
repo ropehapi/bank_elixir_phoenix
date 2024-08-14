@@ -22,6 +22,7 @@ defmodule BankElixirPhoenix.Users.User do
     |> validate_length(:name, min: 3)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:cep, is: 8)
+    |> validate_length(:password, is: 6)
     |> add_password_hash
   end
 
@@ -31,10 +32,13 @@ defmodule BankElixirPhoenix.Users.User do
     |> validate_length(:name, min: 3)
     |> validate_format(:email, ~r/@/)
     |> validate_length(:cep, is: 8)
+    |> validate_length(:password, is: 6)
     |> add_password_hash
   end
 
-  defp add_password_hash(%Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset) do
+  defp add_password_hash(
+         %Ecto.Changeset{valid?: true, changes: %{password: password}} = changeset
+       ) do
     change(changeset, Argon2.add_hash(password))
   end
 

@@ -1,5 +1,6 @@
 defmodule BankElixirPhoenixWeb.UsersJSON do
   alias BankElixirPhoenix.Users.User
+
   def create(%{user: user}) do
     %{
       message: "User criado com sucesso!",
